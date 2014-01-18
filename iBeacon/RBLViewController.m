@@ -8,6 +8,7 @@
 #import "RBLViewController.h"
 #import <CoreBluetooth/CoreBluetooth.h>
 #import <QuartzCore/QuartzCore.h>
+#import <Parse/Parse.h>
 
 #import "RBLService.h"
 
@@ -591,6 +592,11 @@
     [alertView show];
 
     
+    
+}
+- (IBAction)confirmTagout:(UIButton *)sender {
+    
+    [PFPush sendPushMessageToChannelInBackground:@"Plant_Managers" withMessage:@"Alert: Lockout Initiated on Machine!"];
     
 }
 @end

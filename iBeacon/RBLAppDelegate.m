@@ -1,17 +1,18 @@
-//
 //  RBLAppDelegate.m
-//  iBeacon
-//
-//  Copyright (c) 2013 RedBearLab. All rights reserved.
-//  **RM Learning BLE Example
+//  bloto
+
 
 #import "RBLAppDelegate.h"
+#import <Parse/Parse.h>
 
 @implementation RBLAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [Parse setApplicationId:@"EKvdCH1t7WCIX9bsIH4iiQQyUzpLdkranJBvhZ9j" clientKey:@"NCmYTHs7V860j77lXMYLgXFPbQ1TwlJwXXOTgAyQ"];
     // Override point for customization after application launch.
+    [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeAlert|UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeSound];
+    
     return YES;
 }
 							
@@ -41,5 +42,29 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation setDeviceTokenFromData:deviceToken];
+    currentInstallation.channels = @[@"global"];
+    [currentInstallation addUniqueObject:@"Plant_Managers" forKey:@"channels"];
+    [currentInstallation saveInBackground];
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    if (error.code == 3010) {
+        NSLog(@"Push notifications are not supported in the iOS Simulator.");
+    } else {
+        // show some alert or otherwise handle the failure to register.
+        NSLog(@"application:didFailToRegisterForRemoteNotificationsWithError: %@", error);
+    }
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    [PFPush handlePush:userInfo];
+}
+
+
+
 
 @end
