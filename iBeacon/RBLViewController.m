@@ -1,9 +1,6 @@
 //
 //  RBLViewController.m
-//  iBeacon
-//
-//  Copyright (c) 2013 RedBearLab. All rights reserved.
-//
+
 
 #import "RBLViewController.h"
 #import <CoreBluetooth/CoreBluetooth.h>

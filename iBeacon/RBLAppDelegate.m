@@ -3,6 +3,7 @@
 
 
 #import "RBLAppDelegate.h"
+#import "PMViewController.h"
 #import <Parse/Parse.h>
 
 @implementation RBLAppDelegate
@@ -12,6 +13,9 @@
     [Parse setApplicationId:@"EKvdCH1t7WCIX9bsIH4iiQQyUzpLdkranJBvhZ9j" clientKey:@"NCmYTHs7V860j77lXMYLgXFPbQ1TwlJwXXOTgAyQ"];
     // Override point for customization after application launch.
     [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeAlert|UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeSound];
+    
+    PMViewController *controller = [[PMViewController alloc] init];
+    PFObject *object = [PFObject objectWithClassName:@"Todo"];
     
     return YES;
 }
@@ -41,13 +45,18 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation removeObject:@"Plant_Managers" forKey:@"channels"];
+    [currentInstallation saveInBackground];
+    
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     PFInstallation *currentInstallation = [PFInstallation currentInstallation];
     [currentInstallation setDeviceTokenFromData:deviceToken];
     currentInstallation.channels = @[@"global"];
-    [currentInstallation addUniqueObject:@"Plant_Managers" forKey:@"channels"];
+//    [currentInstallation addUniqueObject:@"Plant_Managers" forKey:@"channels"];
     [currentInstallation saveInBackground];
 }
 

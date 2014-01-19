@@ -27,6 +27,8 @@
 		9435F34F1868E27900F3EA3D /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9435F33F1868E27900F3EA3D /* Icon@2x.png */; };
 		9435F3501868E27900F3EA3D /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 9435F3401868E27900F3EA3D /* iTunesArtwork.png */; };
 		9435F3511868E27900F3EA3D /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9435F3411868E27900F3EA3D /* iTunesArtwork@2x.png */; };
+		949F3FB7188B894C00600A70 /* LauncherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 949F3FB6188B894C00600A70 /* LauncherViewController.m */; };
+		949F3FBA188B91B200600A70 /* PMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 949F3FB9188B91B200600A70 /* PMViewController.m */; };
 		94A0DBB3188B30240040628F /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94A0DBB2188B30240040628F /* Parse.framework */; };
 		94A0DBB5188B38040040628F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94A0DBB4188B38040040628F /* AudioToolbox.framework */; };
 		94A0DBB7188B380D0040628F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94A0DBB6188B380D0040628F /* CFNetwork.framework */; };
@@ -71,6 +73,10 @@
 		9435F33F1868E27900F3EA3D /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		9435F3401868E27900F3EA3D /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		9435F3411868E27900F3EA3D /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
+		949F3FB5188B894C00600A70 /* LauncherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LauncherViewController.h; sourceTree = "<group>"; };
+		949F3FB6188B894C00600A70 /* LauncherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LauncherViewController.m; sourceTree = "<group>"; };
+		949F3FB8188B91B200600A70 /* PMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMViewController.h; sourceTree = "<group>"; };
+		949F3FB9188B91B200600A70 /* PMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMViewController.m; sourceTree = "<group>"; };
 		94A0DBB2188B30240040628F /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		94A0DBB4188B38040040628F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		94A0DBB6188B380D0040628F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -193,6 +199,10 @@
 				C21A84F1177FE2D900B38ADA /* RBLAppDelegate.h */,
 				C21A84F2177FE2D900B38ADA /* RBLAppDelegate.m */,
 				C21A84FA177FE2D900B38ADA /* MainStoryboard.storyboard */,
+				949F3FB8188B91B200600A70 /* PMViewController.h */,
+				949F3FB9188B91B200600A70 /* PMViewController.m */,
+				949F3FB5188B894C00600A70 /* LauncherViewController.h */,
+				949F3FB6188B894C00600A70 /* LauncherViewController.m */,
 				C21A84FD177FE2D900B38ADA /* RBLViewController.h */,
 				C21A84FE177FE2D900B38ADA /* RBLViewController.m */,
 				9435F32F1868E22900F3EA3D /* Images.xcassets */,
@@ -309,9 +319,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				949F3FB7188B894C00600A70 /* LauncherViewController.m in Sources */,
 				C21A84EF177FE2D900B38ADA /* main.m in Sources */,
 				C21A84F3177FE2D900B38ADA /* RBLAppDelegate.m in Sources */,
 				C21A84FF177FE2D900B38ADA /* RBLViewController.m in Sources */,
+				949F3FBA188B91B200600A70 /* PMViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
