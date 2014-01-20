@@ -5,13 +5,16 @@
 //
 
 #import "PMViewController.h"
-//#import <Parse/Parse.h>
+#import <Parse/Parse.h>
 
 @interface PMViewController ()
 
 @end
 
 @implementation PMViewController
+
+
+/*
 
 - (id)initWithCoder:(NSCoder *)aCoder {
     self = [super initWithCoder:aCoder];
@@ -39,7 +42,7 @@
     }
     return self;
 }
-
+*/
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad

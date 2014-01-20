@@ -14,8 +14,9 @@
     // Override point for customization after application launch.
     [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeAlert|UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeSound];
     
-    PMViewController *controller = [[PMViewController alloc] init];
-    PFObject *object = [PFObject objectWithClassName:@"Todo"];
+    
+    //PMViewController *controller = [[PMViewController alloc] init];
+    //PFObject *object = [PFObject objectWithClassName:@"Todo"];
     
     return YES;
 }

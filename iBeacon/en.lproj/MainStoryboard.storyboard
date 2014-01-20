@@ -29,7 +29,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="2" kind="modal" id="FMK-qU-kWj"/>
+                                    <segue destination="2" kind="modal" modalTransitionStyle="flipHorizontal" id="FMK-qU-kWj"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XBG-9c-2hA">
@@ -188,6 +188,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="NZJ-Ng-j6Y"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="parseClassName" value="locks"/>
+                    </userDefinedRuntimeAttributes>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bkK-PK-nib" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -462,7 +465,7 @@
                                     <constraint firstItem="jOP-c3-rKs" firstAttribute="leading" secondItem="0Ns-4e-a8u" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="zQq-xx-bmk"/>
                                 </constraints>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JTi-NP-U1q" userLabel="Debug View">
+                            <view hidden="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JTi-NP-U1q" userLabel="Debug View">
                                 <rect key="frame" x="-5" y="399" width="325" height="149"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>

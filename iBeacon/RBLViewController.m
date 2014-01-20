@@ -375,6 +375,25 @@
             self.statusUnlockedImage.hidden=true;
             self.statusLockedImage.hidden=false;
             self.tagoutButton.enabled = true;
+            
+            
+            PFQuery *query = [PFQuery queryWithClassName:@"locks"];
+            [query whereKey:@"lock_uuid" equalTo:deviceService];
+            [query getFirstObjectInBackgroundWithBlock:^(PFObject * parselocks, NSError *error) {
+                if (!error) {
+                    // Found Lock
+                    [parselocks setObject:@"Locked" forKey:@"lock_status"];
+                    
+                    // Save
+                    [parselocks saveInBackground];
+                } else {
+                    // Did not find any Locks for that UUID
+                    NSLog(@"Error: %@", error);
+                }
+            }];
+            
+
+            
         }
         else {
             [self.majorText setTextColor:[UIColor redColor]];
@@ -384,6 +403,26 @@
             self.statusLockedImage.hidden=true;
             self.statusUnlockedImage.hidden=false;
             self.tagoutButton.enabled = false;
+            
+            
+            PFQuery *query = [PFQuery queryWithClassName:@"locks"];
+            [query whereKey:@"lock_uuid" equalTo:deviceService];
+            [query getFirstObjectInBackgroundWithBlock:^(PFObject * parselocks, NSError *error) {
+                if (!error) {
+                    // Found Lock
+                    [parselocks setObject:@"Unlocked" forKey:@"lock_status"];
+                    
+                    // Save
+                    [parselocks saveInBackground];
+                } else {
+                    // Did not find any Locks for that UUID
+                    NSLog(@"Error: %@", error);
+                }
+            }];
+            
+            
+            
+            
         }
         
         NSLog([NSString stringWithFormat:@"%d", majorBytes]);
